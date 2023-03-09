@@ -7,10 +7,11 @@ app.listen("4000", function () {
 });
 
 app.get("/download", function (req, res) {
-  console.log("Download " + link);
   const link = req.query.url;
   const format = req.query.format;
   const quality = req.query.quality;
+
+  console.log("Download " + link);
 
   const video = ytdl(link, {
     format: format,
